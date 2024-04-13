@@ -63,6 +63,19 @@ a {
   margin: 0px;
 }
 
+.video-item {
+  position: relative; /* 追加：相対位置設定 */
+  overflow: hidden; /* 追加：内容がはみ出たら隠す */
+}
+
+.video-item iframe,
+.video-item video {
+  position: absolute; /* 追加：絶対位置設定 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
 /* レスポンシブデザイン設定：画面幅に応じて列数を調整 */
