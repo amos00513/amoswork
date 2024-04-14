@@ -1,0 +1,100 @@
+/* ページ全体の基本設定 */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* 要素を垂直方向に並べる */
+  align-items: center; /* 中央揃え（水平方向） */
+  justify-content: flex-start; /* 始端から配置を開始 */
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+.title-container {
+  width: 100%; /* 幅を100%に設定 */
+  text-align: center; /* テキストを中央揃え */
+  margin-top: 20px; /* 上部の余白を設定 */
+}
+
+.video-gallery {
+  width: 100%; /* 幅を100%に設定 */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 16px;
+  padding: 16px;
+  max-width: 1600px;
+}
+
+
+h3{
+  font-size: 17px;
+  font-weight: 400;
+}
+
+h1 {
+  width: 100%; /* 幅を100%に設定 */
+  text-align: center; /* テキストを中央揃え */
+  margin: 0; /* 上下のマージンを0に設定 */
+  display: block; /* ブロックレベル要素として扱う */
+  font-size: 50px;
+}
+
+.container {
+  z-index: 1002;
+  margin: 0 auto;
+  padding: 0 0px;
+}
+
+.header {
+  z-index: 1002;
+  width: 100%;
+  box-shadow: 0 5px 10px -6px rgba(0,0,0,.1);
+  font-size: 20px;
+  max-width: 1600px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.video-item {
+  position: relative;
+  width: 100%; /* 幅を100%に設定 */
+  padding-top: 56.25%; /* 16:9のアスペクト比に基づくパディング */
+  overflow: hidden;
+}
+
+.video-item iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* レスポンシブデザイン設定：画面幅に応じて列数を調整 */
+@media (min-width: 600px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 画面幅が600px以上の場合は2列表示 */
+  }
+}
+
+@media (min-width: 900px) {
+  .video-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 画面幅が900px以上の場合は3列表示 */
+  }
+}
+
+@media (min-width: 1200px) {
+  .video-gallery {
+    grid-template-columns: repeat(4, 1fr); /* 画面幅が1200px以上の場合は4列表示 */
+  }
+}
